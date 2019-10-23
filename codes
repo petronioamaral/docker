@@ -1,0 +1,12 @@
+docker container run --name mydeb -it debian 
+# set name a container
+
+docker container ls -a
+# list all container created
+
+docker container start -ai mydeb
+# acess to container 
+
+touch name-file-to-create.txt
+# create a new file inside the container
+
