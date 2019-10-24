@@ -10,3 +10,19 @@ docker container start -ai mydeb
 touch name-file-to-create.txt
 # create a new file inside the container
 
+docker container run -p 8080:80 -v %cd%/html:/usr/share/nginx/html nginx
+# call a page/folder when open to container - use %cd% to windows and $(pwd) to linux
+# It's important, you must set this code the current folder that you wants use
+
+docker container run -d --name ex-daemon-basic -p 8080:80 -v %cd%/html:/usr/share/nginx/html nginx
+# run docker in background
+
+docker container start <name>
+# start container
+
+docker container stop <name>
+# stop container
+
+docker container rm <name>
+# remove container
+
