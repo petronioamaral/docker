@@ -35,3 +35,5 @@ docker image ls
 docker container run -p 8081:80 ex-simple-build
 # create container using port 8081 about custom image 
 
+docker image tag ex-simple-build petronioamaral:1.0
+# create tag to image
