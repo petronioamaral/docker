@@ -26,3 +26,12 @@ docker container stop <name>
 docker container rm <name>
 # remove container
 
+docker image build -t ex-simple-build .
+# create build image
+
+docker image ls
+#list images created
+
+docker container run -p 8081:80 ex-simple-build
+# create container using port 8081 about custom image 
+
