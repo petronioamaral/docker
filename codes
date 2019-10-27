@@ -37,3 +37,17 @@ docker container run -p 8081:80 ex-simple-build
 
 docker image tag ex-simple-build petronioamaral:1.0
 # create tag to image
+
+docker network ls
+# list all networks
+
+docker network create --driver bridge rede_nova
+# create a new network as bridge
+
+docker network connect bridge container3
+# connect container3 in the network bridge
+
+docker container exec -it container3 ifconfig
+# check what networks this container3 it is
+
+
