@@ -61,3 +61,6 @@ docker-compose exec db psql -U postgres -c '\l'
 
 docker-compose exec db psql -U postgres -f /scripts/check.sql
 # execute database db -f in file check.sql
+
+docker-compose logs -f -t
+# check the logs
