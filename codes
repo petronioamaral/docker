@@ -50,4 +50,12 @@ docker network connect bridge container3
 docker container exec -it container3 ifconfig
 # check what networks this container3 it is
 
+docker-compose up
+# up a yml and create container
+
+docker-compose up -d
+# up a yml and create container in mode daemon
+
+docker-compose exec db psql -U postgres -c '\l'
+# execute the command \l in database db with user postgres
 
