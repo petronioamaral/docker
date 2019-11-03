@@ -69,6 +69,14 @@ docker build <URL GIT>
 # build from a URL GIT
 
 
+#Enviar imagem para dockerhub
+docker image tag <NAME IMAGE> <NAME DOCKERHUB>/<NEW TAG:VERSION>
+
+docker login --username=petronioamaral
+
+# enivar imagem dockerhub
+docker image push <TAG IMAGE>
+
 
 ##################### AWS ####################
 
