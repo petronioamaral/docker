@@ -64,3 +64,25 @@ docker-compose exec db psql -U postgres -f /scripts/check.sql
 
 docker-compose logs -f -t
 # check the logs
+
+docker build <URL GIT>
+# build from a URL GIT
+
+
+
+##################### AWS ####################
+
+# ver todos os comandos
+docker-machine-h
+
+#criar uma maquina virtual
+docker-machine create --driver amazonec2 aws01
+
+#copiar comandos / liberar comandos
+docker-machine env aws01
+
+# subir arquivos para container em modo daemon
+docker-compose up -d
+
+# sair do docker machine remoto
+eval $(docker-machine env -u)
