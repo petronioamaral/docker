@@ -97,3 +97,9 @@ docker-compose up -d
 
 # sair do docker machine remoto
 eval $(docker-machine env -u)
+
+# transferir imagem docker para outro servidor
+docker save homog | ssh -C ec2-user@54.92.192.128 docker load
+
+# logar em um outro servidro com chave pem
+ssh -v -i petroniolopes.pem ec2-user@54.92.192.128
