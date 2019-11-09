@@ -77,6 +77,15 @@ docker login --username=petronioamaral
 # enivar imagem dockerhub
 docker image push <TAG IMAGE>
 
+# enviar imagem para outro servidor
+docker push homog 642017768485.dkr.ecr.us-east-1.amazonaws.com/aspucmg
+
+# transferir imagem docker para outro servidor
+docker save homog | ssh -C ec2-user@54.92.192.128 docker load
+
+
+
+
 
 ##################### AWS ####################
 
@@ -98,8 +107,7 @@ docker-compose up -d
 # sair do docker machine remoto
 eval $(docker-machine env -u)
 
-# transferir imagem docker para outro servidor
-docker save homog | ssh -C ec2-user@54.92.192.128 docker load
+##################### OUTROS COMANDOS ####################
 
 # logar em um outro servidro com chave pem
 ssh -v -i petroniolopes.pem ec2-user@54.92.192.128
