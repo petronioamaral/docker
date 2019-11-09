@@ -77,8 +77,10 @@ docker login --username=petronioamaral
 # enivar imagem dockerhub
 docker image push <TAG IMAGE>
 
-# enviar imagem para outro servidor
-docker push homog 642017768485.dkr.ecr.us-east-1.amazonaws.com/aspucmg
+
+# cria uma tag da imagem + enviar imagem para outro servidor
+docker tag homog 642017768485.dkr.ecr.us-east-1.amazonaws.com/homog
+docker push homog 642017768485.dkr.ecr.us-east-1.amazonaws.com/homog
 
 # transferir imagem docker para outro servidor
 docker save homog | ssh -C ec2-user@54.92.192.128 docker load
