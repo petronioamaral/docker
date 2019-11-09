@@ -80,6 +80,9 @@ docker image push <TAG IMAGE>
 
 ##################### AWS ####################
 
+# connect aws
+ ssh -i petroniolopes.pem ec2-user@ec2-54-92-192-128.compute-1.amazonaws.com
+
 # ver todos os comandos
 docker-machine-h
 
