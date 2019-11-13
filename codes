@@ -113,3 +113,24 @@ eval $(docker-machine env -u)
 
 # logar em um outro servidro com chave pem
 ssh -v -i petroniolopes.pem ec2-user@54.92.192.128
+
+##################### ENVIAR CONTAINER DE UM SERVIDOR PARA A AWS ####################
+
+$ aws --version
+aws-cli/1.9.17 Python/2.7.6 Linux/3.16.0-38-generic botocore/1.3.17
+$ docker --version
+Docker version 1.9.1, build a34a1d5
+
+aws ecr get-authorization-token --region us-east-1 --output text \
+    --query authorizationData[].authorizationToken | base64 -d | cut -d: -f2
+
+docker login -u AWS https://############.dkr.ecr.us-east-1.amazonaws.com/
+password: <paste the very long password from above>
+email: <I left this blank>
+
+docker tag test:latest ############.dkr.ecr.us-east-1.amazonaws.com/test:latest
+docker push ############.dkr.ecr.us-east-1.amazonaws.com/test:latest
+The push refers to a repository [910732017890.dkr.ecr.us-east-1.amazonaws.com/test] (len: 1)
+d5122f58a2e1: Pushed 
+7bddbca3b908: Pushed 
+latest: digest: sha256:bc0b521fd398bd1a2ef58a289dcb910334608723fd570e7bddb36eacd0060363 size: 4378
