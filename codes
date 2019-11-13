@@ -86,8 +86,8 @@ docker push homog 642017768485.dkr.ecr.us-east-1.amazonaws.com/homog
 docker save homog | ssh -C ec2-user@54.92.192.128 docker load
 
 
-
-
+# salvar sql do postgres 
+docker exec -t fac2a9e0ca11 pg_dumpall -c -U postgres > dump_`date +%d-%m-%Y"_"%H_%M_%S`.sql
 
 ##################### AWS ####################
 
@@ -113,6 +113,12 @@ eval $(docker-machine env -u)
 
 # logar em um outro servidro com chave pem
 ssh -v -i petroniolopes.pem ec2-user@54.92.192.128
+
+# SSH - enviar arquivo para outro servidor
+scp -i pub.pem src/homog.tar ubuntu@3.80.18.58:~/.
+scp -i petroniolopes.pem /src/homog.tar ec2-user@54.92.192.128:/ 
+
+
 
 ##################### ENVIAR CONTAINER DE UM SERVIDOR PARA A AWS ####################
 
