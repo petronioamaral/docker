@@ -118,6 +118,8 @@ ssh -v -i petroniolopes.pem ec2-user@54.92.192.128
 scp -i pub.pem src/homog.tar ubuntu@3.80.18.58:~/.
 scp -i petroniolopes.pem /src/homog.tar ec2-user@54.92.192.128:/ 
 
+# root
+sudo su -
 
 
 ##################### ENVIAR CONTAINER DE UM SERVIDOR PARA A AWS ####################
