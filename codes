@@ -109,6 +109,12 @@ docker-compose up -d
 # sair do docker machine remoto
 eval $(docker-machine env -u)
 
+#criar imagem do container
+docker commit <IDCONTAINER> <NAME:TAG>
+
+#salvar tar do container
+docker save <NAME:TAG> > NAME.tar
+
 ##################### OUTROS COMANDOS ####################
 
 # logar em um outro servidro com chave pem
