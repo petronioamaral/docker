@@ -89,6 +89,16 @@ docker save homog | ssh -C ec2-user@54.92.192.128 docker load
 # salvar sql do postgres 
 docker exec -t fac2a9e0ca11 pg_dumpall -c -U postgres > dump_`date +%d-%m-%Y"_"%H_%M_%S`.sql
 
+#criar imagem do container
+docker commit <IDCONTAINER> <NAME:TAG>
+
+#salvar tar do container
+docker save <NAME:TAG> > NAME.tar
+
+#carregar tar para imagem
+docker image load --input ./pucminas_backup_26_nov.tar
+
+
 ##################### AWS ####################
 
 # connect aws
@@ -109,11 +119,8 @@ docker-compose up -d
 # sair do docker machine remoto
 eval $(docker-machine env -u)
 
-#criar imagem do container
-docker commit <IDCONTAINER> <NAME:TAG>
 
-#salvar tar do container
-docker save <NAME:TAG> > NAME.tar
+
 
 ##################### OUTROS COMANDOS ####################
 
